@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, User } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState<{ username: string } | null>(null);
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -14,6 +15,21 @@ export default function Navbar() {
     { name: 'CUET', href: '/exam/cuet' },
     { name: 'Practice', href: '/practice' },
   ];
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1])); // Decode JWT payload
+        if (payload.username) {
+          setUser({ username: payload.username });
+        }
+        console.log('Decoded Payload:', payload);
+      } catch (err) {
+        console.error('Failed to parse token:', err);
+      }
+    }
+  }, []);
 
   return (
     <nav className="bg-white shadow-sm">
@@ -36,12 +52,22 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <Link
-              href="/login"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-            >
-              Sign In
-            </Link>
+            {user ? (
+              <Link
+                href="/dashboard"
+                className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition"
+              >
+                <User className="text-blue-600" size={20} />
+                <span>{user.username}</span>
+              </Link>
+            ) : (
+              <Link
+                href="/login"
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+              >
+                Sign In
+              </Link>
+            )}
           </div>
 
           {/* Mobile Navigation Button */}
@@ -69,13 +95,24 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <Link
-                href="/login"
-                className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md"
-                onClick={() => setIsOpen(false)}
-              >
-                Sign In
-              </Link>
+              {user ? (
+                <Link
+                  href="/dashboard"
+                  className="flex items-center px-3 py-2 space-x-2 text-gray-700 hover:bg-blue-50 rounded-md"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <User className="text-blue-600" size={20} />
+                  <span>{user.username}</span>
+                </Link>
+              ) : (
+                <Link
+                  href="/login"
+                  className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Sign In
+                </Link>
+              )}
             </div>
           </div>
         )}

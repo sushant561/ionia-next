@@ -60,8 +60,6 @@ const QuestionPanel: React.FC<QuestionPanelProps> = ({
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:4000/api/v1/previous-year-papers/get/${paperId}`);
-        console.log(response.data);
-
         const questionData = response.data.data.questions.map((q: any) => ({
           id: q._id,
           question: q.question,
@@ -84,6 +82,14 @@ const QuestionPanel: React.FC<QuestionPanelProps> = ({
 
   const currentQuestionData = questions[currentQuestion - 1];
 
+  const handleOptionChangeInternal = (questionIndex: number, answer: string) => {
+    // Pass the change to the parent component
+    handleOptionChange(questionIndex, answer);
+
+    // Mark question as answered when an option is selected
+    setAnsweredQuestions((prev) => new Set(prev.add(questionIndex)));
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-6">
       {/* Title Section */}
@@ -101,7 +107,7 @@ const QuestionPanel: React.FC<QuestionPanelProps> = ({
             optionIndex={index}
             questionNumber={currentQuestion}
             selectedAnswer={selectedAnswers.get(currentQuestion)}
-            handleOptionChange={handleOptionChange}
+            handleOptionChange={handleOptionChangeInternal}
           />
         ))}
       </div>

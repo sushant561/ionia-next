@@ -1,10 +1,12 @@
-// app/(auth)/login/page.tsx
 'use client';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext'; // Import the useAuth hook
 
 export default function LoginPage() {
+  const { setToken } = useAuth(); // Destructure setToken from AuthContext
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -15,7 +17,7 @@ export default function LoginPage() {
     setError('');
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -26,8 +28,14 @@ export default function LoginPage() {
       }
 
       const data = await response.json();
-      localStorage.setItem('token', data.token);
-      router.push('/dashboard');
+      const accessToken = data.data.accessToken;
+
+      // Store token in localStorage and in AuthContext
+      localStorage.setItem('token', accessToken);
+      setToken(accessToken); // Set the token in context
+
+      // Use router.push to navigate to home without reloading
+      router.push('/'); // This will navigate to the homepage
     } catch (err: any) {
       setError(err.message);
     }
@@ -71,6 +79,14 @@ export default function LoginPage() {
           Login
         </button>
       </form>
+
+      {/* Call-to-action for new users */}
+      <p className="text-center mt-6 text-gray-600">
+        Don’t have an account?{' '}
+        <Link href="/register" className="text-primary font-medium hover:underline">
+          Create an account
+        </Link>
+      </p>
     </div>
   );
 }
