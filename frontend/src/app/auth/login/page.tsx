@@ -35,7 +35,14 @@ export default function LoginPage() {
       setToken(accessToken); // Set the token in context
 
       // Use router.push to navigate to home without reloading
-      router.push('/'); // This will navigate to the homepage
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulating async API call
+        console.log("Navigating...");
+        router.push('/');
+        console.log("Navigation triggered!");
+    } catch (error) {
+        console.error("Navigation error:", error);
+    }
     } catch (err: any) {
       setError(err.message);
     }

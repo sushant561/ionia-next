@@ -1,7 +1,15 @@
+"use client";
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import '../styles/globals.css';
+import { useEffect } from 'react';
+
 export default function Home() {
+  // useEffect(() => {
+  //   // Set the page title
+  //   window.location.reload();
+  // }, []);
+
   const examTypes = [
     {
       title: 'JEE Mains',
