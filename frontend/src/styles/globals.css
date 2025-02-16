@@ -28,6 +28,11 @@
   color: green;
 }
 
+.logo-b{
+  font-size: 9.4px;
+  position: absolute;
+  top: 36px;
+}
 /* ************* Media query *************** */
 @media (max-width: 700px){
   .main-txt{

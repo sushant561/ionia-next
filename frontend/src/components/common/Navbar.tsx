@@ -61,7 +61,9 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-green-600">iONIA</span>
+            <span className="text-4xl font-bold text-green-600">iONIA<br></br><span className="logo-b">Enquire beyond horizon</span></span>
+            
+            
           </Link>
 
           {/* Desktop Navigation */}

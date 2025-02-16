@@ -71,8 +71,9 @@ export default function Home() {
             href={exam.href}
             className="group relative overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105"
           >
-            <div style={{ background: "linear-gradient(to bottom, #22c55e,rgb(15, 100, 46))" }} className={`${exam.color} p-8 text-white h-full shadow-xl hover:shadow-2xl rounded-lg`}>
+            <div style={{ background: "linear-gradient(to bottom,rgb(15, 100, 46),rgb(217, 221, 189))" }} className={`${exam.color} p-8 text-white h-full shadow-xl hover:shadow-2xl rounded-lg`}>
               <h3 className="text-3xl font-bold mb-4">{exam.title}</h3>
+              {/* #22c55e,rgb(15, 100, 46)) */}
               <p className="mb-6 text-lg">{exam.description}</p>
               <ArrowRight className="absolute bottom-4 right-4 transform group-hover:translate-x-2 transition-transform text-3xl" />
             </div>
