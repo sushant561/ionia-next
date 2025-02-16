@@ -177,7 +177,7 @@ export default function CreateTestPage() {
 
         <button
           type="button"
-          className="w-full p-4 bg-primary text-white rounded"
+          className="mytxtgreen w-full p-4 bg-primary text-white rounded"
           onClick={handleCreateTest}
           disabled={loading}
         >

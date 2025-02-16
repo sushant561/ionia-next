@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">TestSeries</h3>
+            <h3 className="text-xl font-bold mb-4">iONIA</h3>
             <p className="text-gray-400">
               Your ultimate preparation platform for competitive exams
             </p>
@@ -51,6 +51,11 @@ export default function Footer() {
                   CUET
                 </Link>
               </li>
+              <li>
+                <Link href="/tests/cbse" className="text-gray-400 hover:text-white">
+                  CBSE
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -77,7 +82,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} TestSeries. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} iONIA. All rights reserved.</p>
         </div>
       </div>
     </footer>

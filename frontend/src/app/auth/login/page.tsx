@@ -49,7 +49,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-md mx-auto mt-10 mb-10 p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
       {error && <p className="text-red-500 text-center">{error}</p>}
       <form onSubmit={handleLogin} className="space-y-4">
@@ -81,7 +81,7 @@ export default function LoginPage() {
         </div>
         <button
           type="submit"
-          className="w-full bg-primary text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+          className="mygreen w-full bg-green-700 text-white py-2 px-4 rounded hover:bg-green-700 transition-colors"
         >
           Login
         </button>

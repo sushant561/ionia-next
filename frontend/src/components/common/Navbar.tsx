@@ -13,6 +13,7 @@ export default function Navbar() {
     { name: 'JEE Mains', href: '/exam/jee-mains' },
     { name: 'JEE Advanced', href: '/exam/jee-advanced' },
     { name: 'CUET', href: '/exam/cuet' },
+    { name: 'CBSE', href: '/exam/cbse' },
     { name: 'Practice', href: '/practice' },
   ];
 
@@ -37,7 +38,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-blue-600">TestSeries</span>
+              <span className="text-2xl font-bold text-green-600">iONIA</span>
             </Link>
           </div>
 
@@ -47,7 +48,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition"
+                className="text-gray-700 hover:text-green-600 transition"
               >
                 {item.name}
               </Link>
@@ -63,7 +64,7 @@ export default function Navbar() {
             ) : (
               <Link
                 href="/login"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                className="mygreen bg-blue-600 text-black px-4 py-2 rounded-lg hover:bg-green-700 hover:text-white transition duration-300"
               >
                 Sign In
               </Link>

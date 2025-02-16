@@ -59,7 +59,7 @@ export default function RegisterPage() {
             <input
               type="text"
               id="username"
-              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -72,7 +72,7 @@ export default function RegisterPage() {
             <input
               type="text"
               id="fullName"
-              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
               value={fullName}
               onChange={(e) => setName(e.target.value)}
               required
@@ -85,7 +85,7 @@ export default function RegisterPage() {
             <input
               type="email"
               id="email"
-              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -98,7 +98,7 @@ export default function RegisterPage() {
             <input
               type="password"
               id="password"
-              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -111,7 +111,7 @@ export default function RegisterPage() {
             <input
               type="password"
               id="confirmPassword"
-              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
@@ -119,14 +119,14 @@ export default function RegisterPage() {
           </div>
           <button
             type="submit"
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+            className="mygreen w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors"
           >
             Register
           </button>
         </form>
         <p className="text-center text-sm text-gray-600">
           Already have an account?{' '}
-          <a href="/login" className="font-medium text-blue-600 hover:text-blue-500">
+          <a href="/login" className="font-medium text-green-600 hover:text-green-500">
             Log in
           </a>
         </p>
