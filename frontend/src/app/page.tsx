@@ -38,10 +38,10 @@ export default function Home() {
   ];
 
   return (
-    <div className="container mx-auto px-6 py-12">
+    <div className="main-container container mx-auto px-6 py-12">
       {/* Hero Section */}
       <section className="mytxtdim mygray text-center mb-16 bg-gradient-to-r from-green-600 via-#dcffdc-600 to-green-600 p-12 rounded-lg shadow-xl">
-        <h1 className="text-5xl font-extrabold text-black mb-6">
+        <h1 className="main-txt text-5xl font-extrabold text-black mb-6">
           Ace Your Entrance Exams
         </h1>
         <p className="mytxtdim text-xl text-black-100 mb-8 max-w-3xl mx-auto">

@@ -49,7 +49,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 mb-10 p-6 bg-white rounded-lg shadow-md">
+    <div className="other-container max-w-md mx-auto mb-10 p-6 bg-white rounded-lg shadow-md mt-24">
       <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
       {error && <p className="text-red-500 text-center">{error}</p>}
       <form onSubmit={handleLogin} className="space-y-4">

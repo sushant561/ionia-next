@@ -27,3 +27,32 @@
 .mytxtgreen{
   color: green;
 }
+
+/* ************* Media query *************** */
+@media (max-width: 700px){
+  .main-txt{
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .main-container{
+    width: 110vw;
+  }
+  .footer-container{
+    width: 120vw;
+  }
+  .nav-container{
+    width: 120vw;
+  }
+  .other-container{
+    width: 110vw;
+  }
+
+  .admin-box{
+    flex-direction: column;
+    height: wrap;
+  }
+  .admin-box1{
+    height:100%;
+  }
+}
